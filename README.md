@@ -118,16 +118,41 @@ The actual subscription creation may take approximately 5 mins to 15mins.
 
 <img width="1288" alt="bedrock-redis-rc-23" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/e8c82094-81cd-4c06-b519-50dd0bad44fe">
 
+Once the subscription is created, you will see that it is ready with a Green amber light on in the `Status` column.
+
 <img width="1288" alt="bedrock-redis-rc-24" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/36af6ccf-a789-46eb-913e-24f354eee3df">
+
+If you click on the database, the database configuration screen shows that the TLS is turned off by default. Click on Edit button to edit the details.
 
 <img width="1288" alt="bedrock-redis-rc-25" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/3dfae120-a999-450b-a6ed-74260f84e37b">
 
+Go ahead and turn on the TLS (`annotation 1`), disable `TLS client authentication` (`annotation 2`) and download the server certification (`annotation 3`).
+Finally `Save the database` (`annotation 4`)
+
 <img width="1288" alt="bedrock-redis-rc-28" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/43b222c0-cd89-48b2-b882-03507ecd019d">
+
+Redis Enterprise Cloud on AWS is now ready for your use. Typically, the developers need an endpoint , a user password and the server certificate to connect to the database from their applications.
 
 <img width="1288" alt="bedrock-redis-rc-30" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/0a8a13b6-4a7b-421f-a900-0186d2391d75">
 
+Redis web console also gives you code snippets on how to connect from different clients. Choose the one that is appropriate to your client applications.
+
 <img width="1288" alt="bedrock-redis-rc-31" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/8946edae-e0d4-4e86-8ac9-e9d38bebe618">
 
+Like mentioned above, here is how you can get the password to your Redis database.
 <img width="1290" alt="bedrock-redis-rc-32" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/15671058-1040-4f9b-8858-9669970c6112">
+
+### Summary
+In essence, you will spin a Redis Enterprise Cloud cluster in AWS and once this subscription is provisioned, you will need the following details for your database, for your client applications to connect to.
+
+```
+Redis Enterprise Cloud Database Hostname
+Redis Enterprise Cloud Database Port Number
+Redis Enterprise Cloud Database Password
+Redis Enterprise Cloud Database Server certification for TLS
+```
+
+-----
+
 
 
