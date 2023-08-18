@@ -24,3 +24,6 @@ Follow the setup instructions to configure AWS Bedrock [here](./docs/bedrock-set
 ## Redis Enterprise Cloud Setup
 
 To setup Redis Enterprise Cloud as your [vector database](https://redis.com/solutions/use-cases/vector-database) via the AWS Marketplace, please following the instructions [here](./docs/redis-setup.md)
+
+## In the moode to run a few examples?
+Go ahead and get a taste of AWS Bedrock by running a few [examples](./examples) yourself.
