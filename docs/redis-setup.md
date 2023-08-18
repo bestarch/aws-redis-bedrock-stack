@@ -19,7 +19,8 @@ On the product page,
 1. Click on the `Subscribe` button. This button gets greyed out after you click on it for the first time.
 2. Then the banner highlighted at the top, will appear.
 3. On this banner, go ahead and click on `Setup your account`.
-<img width="1296" alt="bedrock-redis-rc-3" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/cd5cf68e-b65c-4745-925a-17364aa7fc58">
+
+<img width="1296" alt="bedrock-redis-rc-3" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/947c3a6b-3947-43a2-b88b-ee3ab1585138">
 
 This navigates you to the sign-in page of `Redis Enterprise Cloud` web console.
 
@@ -43,7 +44,7 @@ As soon as you login, you will see this UI. Notice that there is a Free Trial ba
 2. On the `Setup` tab, you will see cloud vendors.
 3. Go ahead and select `AWS` if it is not highlighted and selected already.
 
-<img width="1288" alt="bedrock-redis-rc-8" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/a279a43c-aa4f-41ae-95e0-f069cfd7bf33">
+<img width="1293" alt="bedrock-redis-rc-8" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/bf288185-0864-4780-a168-877828dc0aa0">
 
 Go ahead and select your `Region` and give `Subscription name` a name.
 
