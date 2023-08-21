@@ -1,6 +1,6 @@
 ------
 
-# Bedrock Setup / Configuration steps
+# AWS Bedrock Configuration
 
 <Page under construction>
 Please stay tuned...

@@ -17,13 +17,18 @@
 
 # Getting Started
 
-## AWS Bedrock Setup
-
-Follow the setup instructions to configure AWS Bedrock [here](./docs/bedrock-setup.md)
-
 ## Redis Enterprise Cloud Setup
 
-To setup Redis Enterprise Cloud as your [vector database](https://redis.com/solutions/use-cases/vector-database) via the AWS Marketplace, please following the instructions [here](./docs/redis-setup.md)
+To setup Redis Enterprise Cloud as your [vector database](https://redis.com/solutions/use-cases/vector-database) via the AWS Marketplace, please follow the instructions [here](./docs/redis-enterprise-cloud-setup.md).
 
-## In the moode to run a few examples?
-Go ahead and get a taste of AWS Bedrock by running a few [examples](./examples) yourself.
+## Vector Index Creation
+To create your Bedrock vector index in Redis, please follow the instructions [here](./docs/vector-index-creation.md).
+
+## AWS Bedrock Setup
+To configure AWS Bedrock for your generative AI applications, please follow the instructions [here](./docs/aws-bedrock-configuration.md).
+
+_____
+
+
+# Community Examples
+Go ahead and get a taste of AWS Bedrock by running a few [examples](./examples) yourself. These will continuously update once the integration is live and as community developers add more examples.

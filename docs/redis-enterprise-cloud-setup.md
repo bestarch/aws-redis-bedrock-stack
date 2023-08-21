@@ -2,16 +2,16 @@
 
 # Redis Enterprise Cloud Setup
 
-Lets start with AWS Marketplace. A simple search for `Redis` yields you to the following highlighted `Redis Enterprise Cloud` offerings from Redis.
-Notice you have two products to choose from:
-* Redis Enterprise Cloud Flexible - Pay as you go option.
-* Redis Enterprise Cloud Annual Commit
+## Goal
+The goal is to deploy Redis Enterprise Cloud as your vector database for AWS Bedrock on the AWS Marketplace. You will create a flexible, pay-as-you-go subscription. If you are new to Redis, **we even give you a 14-day free trial of $500 USD to get started!**
 
-Go ahead and choose `Redis Enterprise Cloud Flexible` option for this hands-on exercise.
+[ TODO - BEDROCK UI REDIS DEPLOYMENT LINK SCREENSHOT]
 
-<img width="1296" alt="bedrock-redis-rc-1" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/b57240a6-ed26-4755-9088-8b05072a0d0a">
+Link directly from the Bedrock configuration screen seen above, or manually [follow this link] to the AWS Marketplace offering to get started.
 
-Continue to click on `View purchase options`
+## Setup Steps
+
+Once on the landing page, continue to click on `View purchase options`.
 
 <img width="1296" alt="bedrock-redis-rc-2" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/8de36e98-71bf-49c1-b0b8-640388f6fdde">
 
@@ -42,7 +42,7 @@ Go ahead and click on `Start free trial`.
 As soon as you login, you will see this UI. Notice that there is a Free Trial banner at the top. Ignore this banner, if you are not on a promotional free tier.
 1. Appearance of `AWS Marketplace` icon, indicates that your Redis account is now connected to your AWS account.
 2. On the `Setup` tab, you will see cloud vendors.
-3. Go ahead and select `AWS` if it is not highlighted and selected already.
+3. Select `AWS` if it is not highlighted and selected already.
 
 <img width="1293" alt="bedrock-redis-rc-8" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/bf288185-0864-4780-a168-877828dc0aa0">
 
@@ -70,7 +70,13 @@ Give your `database` a name and select `RediSearch` and `RedisJSON` modules.
 
 <img width="1288" alt="bedrock-redis-rc-15" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/6d449812-b920-4f5e-9f59-cb0e7878df3d">
 
-Depending upon the total data volume, you are going to start with a specific data size and throughput needed for your applications. For this hands-on exercise, just choose a minimalistic configuration ( example: Memory = 1 GB and Throughput Shards = 1).
+Depending upon the total number of documents you intend to use in your vector database, you will need to start with a specific data size for your applications. For this exercise, use the approximate sizing table below to help pick a starting point (which you can always adjust up or down later on). Alternatively, you can select a simple minimalistic configuration for now (example: Memory = 1 GB and Throughput Shards = 1).
+
+| Number of Documents | Db size w/out replication (no HA) | Db size w/ replication (HA) |
+| ------- | ------- | ------- |
+| TODO  | TODO  | TODO  |
+| TODO  | TODO  | TODO  |
+
 
 <img width="1288" alt="bedrock-redis-rc-21" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/3dafeb05-c1d1-411f-bace-7bd5ed921334">
 
