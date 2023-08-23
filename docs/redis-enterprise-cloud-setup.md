@@ -11,6 +11,7 @@ Link directly from the Bedrock configuration screen seen above, or manually [fol
 
 ## Setup Steps
 
+### Getting started from AWS Marketplace
 Once on the landing page, continue to click on `View purchase options`.
 
 <img width="1296" alt="bedrock-redis-rc-2" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/8de36e98-71bf-49c1-b0b8-640388f6fdde">
@@ -46,6 +47,8 @@ As soon as you login, you will see this UI. Notice that there is a Free Trial ba
 
 <img width="1293" alt="bedrock-redis-rc-8" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/bf288185-0864-4780-a168-877828dc0aa0">
 
+### Setting up Redis Subscription
+
 Go ahead and select your `Region` and give `Subscription name` a name.
 
 <img width="1288" alt="bedrock-redis-rc-10" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/9d204251-2399-43a1-a406-869af7769986">
@@ -61,6 +64,8 @@ Choose a `Region` and a `CIDR`, like what is shown below.
 Simply choose default values here.
 
 <img width="1290" alt="bedrock-redis-rc-13" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/544c0942-4515-460f-9706-a56d44f7f0eb">
+
+### Sizing a Redis Database
 
 On the `Sizing` tab, click on `+` button to add a new database.
 
@@ -92,14 +97,20 @@ Once the subscription is created, you will see that it is ready with a Green amb
 
 <img width="1288" alt="bedrock-redis-rc-24" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/36af6ccf-a789-46eb-913e-24f354eee3df">
 
+### Reviewing the database configuration details
+
 If you click on the database, the database configuration screen shows that the TLS is turned off by default. Click on Edit button to edit the details.
 
 <img width="1288" alt="bedrock-redis-rc-25" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/3dfae120-a999-450b-a6ed-74260f84e37b">
+
+### TLS Setup for your Redis Database
 
 Go ahead and turn on the TLS (`annotation 1`), disable `TLS client authentication` (`annotation 2`) and download the server certification (`annotation 3`).
 Finally `Save the database` (`annotation 4`)
 
 <img width="1288" alt="bedrock-redis-rc-28" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/43b222c0-cd89-48b2-b882-03507ecd019d">
+
+### Redis database endpoint configurations
 
 Redis Enterprise Cloud on AWS is now ready for your use. Typically, the developers need an endpoint , a user password and the server certificate to connect to the database from their applications.
 
