@@ -51,9 +51,9 @@ Choose to create a FLAT index.
 
 Adjust the pre-set index creation script. Here's a recommendation:
 
-- Index name: bedrock-idx
-- Key prefix: bedrock-doc (This ensures multi-tenancy in your Redis database)
-- Vector field: vector with 1532 dimensions, using the COSINE metric (dimensions determined by the chosen LLM)
+- Index name: `bedrock-idx`
+- Key prefix: `bedrock-doc` (This ensures multi-tenancy in your Redis database)
+- Vector field: vector with `1536` dimensions, using the `COSINE` metric (**dimensions determined by the chosen LLM**) LINK TO AWS PAGE WITH EMBEDDING MODELS AND DIMENSIONS
 - Execute the script using the green arrow.
 
 ![Run Script](#TODO - show running the index creation script)
