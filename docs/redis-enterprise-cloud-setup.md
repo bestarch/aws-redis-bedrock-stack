@@ -107,7 +107,7 @@ You will also check `TLS client authentication` (Annotation 3).
 You will `Generate certificate` (Annotation 4).
 And finally you will click on the `Save database` (Annotation 5).
 
-<img width="1920" alt="bedrock-redis-rc-tls-1" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/4c84d330-5e83-4b8f-8a58-17466f8c3d78">
+<img width="1920" alt="bedrock-redis-rc-tls-1" src="./assets/bedrock-redis-rc-tls-1.png">
 
 When you click on `Generate certificate`, you will see the certificate text appearing between `-----BEGIN CERTIFICATE-----` and `-------END CERTIFICATE---------`. (Annotation 1)
 Make sure you download the certificates (Annotation 2) before saving the the database configurations.(Annotation 3)
@@ -116,7 +116,7 @@ Make sure you download the certificates (Annotation 2) before saving the the dat
 
 ## Connect with RedisInsight
 
-To test client connections with `TLS` turned on, go ahead and download RedisInsight. This can be done directly by clicking on the `Connect` button on your database. 
+To test client connections with `TLS` turned on, go ahead and download RedisInsight. This can be done directly by clicking on the `Connect` button on your database.
 Under `RedisInsight Desktop` section, you can see a `Download` drop down for your OS platform. Go ahead and download (Annotation 3)
 You will need the `Public endpoint` connection details (Annotation 1 and 2), to connect from RedisInsight.
 
