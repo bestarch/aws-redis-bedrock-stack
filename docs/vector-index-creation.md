@@ -3,59 +3,41 @@
 # Vector Index Creation
 
 ## Objective
-Post the AWS Bedrock launch, a vector index in Redis is essential to house your vectorized data.
+To integrate with AWS Bedrock, you must create a vector index in Redis to house your vectorized data.
 
-> Prerequisite: Ensure that your Redis Enterprise Cloud database is active with TLS enabled and certificate files (redis_ca.pem, redis_user_crt.pem, and redis_secret_crt.pem) downloaded.
+> ✍️ Prerequisite: Ensure that your Redis Enterprise Cloud database is [active with TLS enabled](redis-enterprise-cloud-setup.md#tls-setup-for-your-redis-database) and certificate files (`redis_ca.pem`, `redis_user_crt.pem`, and `redis_secret_crt.pem`) downloaded.
+
+> ✍️ Prerequisite: You will need the free [RedisInsight](https://redis.com/redis-enterprise/redis-insight/#insight-form) GUI for this task.
 
 ## Setup Procedure
-We'll utilize the [RedisInsight](https://redis.com/redis-enterprise/redis-insight/#insight-form) GUI for this task. Follow these steps:
 
-### 1. Install RedisInsight
-Download [RedisInsight](https://redis.com/redis-enterprise/redis-insight/#insight-form).
+### 1. Connect to Your Database in RedisInsight
+While using RedisInsight (RI) is not stricly required, RI provides the easiest route for us to create a vector index for Bedrock. Alternatively you can utilize any number of our supported client libraries and the Redis CLI.
 
-Install and launch the application to see the "Welcome" screen.
+[Follow these steps](redis-enterprise-cloud-setup.md#connect-with-redisinsight) to connect your Redis Cloud database to RedisInsight.
 
-![RedisInsight Welcome Screen](#TODO - redis insight starting image)
-
-### 2. Connect to Your Database
-Click ADD REDIS DATABASE.
-
-![RedisInsight Add DB Screen](#TODO - redis insight add db screen)
-
-In the Redis Cloud console, locate your deployed database. Click Connect and copy the provided URL.
-
-![Redis Cloud Console](#TODO - redis cloud console copy URL)
-
-Paste this URL into RedisInsight. It should auto-fill the necessary fields.
-
-![URL Paste](#TODO - copy/pasting the url to RI)
-
-Enable TLS authentication and paste the contents of the three aforementioned certificate files.
-
-![Add TLS Certificates](#TODO - add tls certs)
-
-Click "Test Connection" to verify a secure link.
-
-![Test Connection](#TODO - test connection)
-
-### 3. Initiate Vector Index Creation
-Navigate to "Workbench" on the sidebar and explore the user guides, focusing on "Vector Similarity Search".
+### 2. Create Vector Index for Bedrock
+Navigate to "Workbench" on the sidebar and note the user guides. Openthe guide on "Vector Similarity Search".
 
 ![Navigating to Workbench](#TODO - navigating to workbench)
 
-Choose to create a FLAT index.
+Given the options available, choose to create a FLAT index.
 
->Note: Redis supports two index kinds: FLAT and HNSW. FLAT is apt for smaller datasets needing precision, while HNSW suits larger datasets prioritizing speed over some accuracy. Detailed HNSW parameters are explained here.
+> 💡 Redis supports two index types: FLAT and HNSW. FLAT is apt for smaller datasets needing precision, while HNSW suits larger datasets prioritizing speed over some accuracy. For more details, read about the supported index types [here](https://redis.io/docs/interact/search-and-query/search/vectors/#create-a-vector-field).
 
 ![Command Editor](#TODO - open editor for commands)
 
-Adjust the pre-set index creation script. Here's a recommendation:
+We need to update the provided index creation script with settings that are relevant to Bedrock. Here's what we need to include:
 
-- Index name: `bedrock-idx`
-- Key prefix: `bedrock-doc` (This ensures multi-tenancy in your Redis database)
-- Vector field: vector with `1536` dimensions, using the `COSINE` metric (**dimensions determined by the chosen LLM**) LINK TO AWS PAGE WITH EMBEDDING MODELS AND DIMENSIONS
-- Execute the script using the green arrow.
+- Index name: `bedrock-idx` (fully customizable)
+- Vector field: `FLAT` vector field with `1536` dimensions, using the `COSINE` metric
+
+> 💡 Embedding dimensions are determined by the selected embedding model on the Bedrock data integration page. 1536 are the output dimensions of the default Titan LLM provided by AWS.
+
+> 💡 As of this launch, Bedrock will not perform any metadata filtering (on the roadmap). So we do not need to include any additional fields for metadata at this time.
+
+Execute the script, as seen below, using the green arrow.
 
 ![Run Script](#TODO - show running the index creation script)
 
-**Upon seeing "OK", you're all set to [integrate your database and index with Bedrock](aws-bedrock-configuration.md)!**
+**Upon seeing "OK", you're all set to [complete your Bedrock integration]()!**

@@ -2,14 +2,14 @@
 
 # Redis Enterprise Cloud Setup
 
-## Goal
+## Objective
 The goal is to deploy Redis Enterprise Cloud as your vector database for AWS Bedrock on the AWS Marketplace. You will create a flexible, pay-as-you-go subscription. If you are new to Redis, **we even give you a 14-day free trial of $500 USD to get started!**
 
 [ TODO - BEDROCK UI REDIS DEPLOYMENT LINK SCREENSHOT]
 
 Link directly from the Bedrock configuration screen seen above, or manually [follow this link] to the AWS Marketplace offering to get started.
 
-## Setup Steps
+## Setup Procedure
 
 ### Getting started from AWS Marketplace
 Once on the landing page, continue to click on `View purchase options`.
@@ -114,7 +114,7 @@ Make sure you download the certificates (Annotation 2) before saving the the dat
 
 <img width="1920" alt="bedrock-redis-rc-tls-2-generate-client-cert" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/7988ec18-fd4e-4bfd-b883-8d1b5802e8e6">
 
-## Setting up a Redis Client - RedisInsight
+## Connect with RedisInsight
 
 To test client connections with `TLS` turned on, go ahead and download RedisInsight. This can be done directly by clicking on the `Connect` button on your database. 
 Under `RedisInsight Desktop` section, you can see a `Download` drop down for your OS platform. Go ahead and download (Annotation 3)
@@ -130,7 +130,7 @@ Once RedisInsight is installed, you are welcomed to the main screen as shown bel
 
 <img width="1278" alt="bedrock-redis-rc-tls-5-ri-welcome" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/81ea5180-f0ea-44e7-89eb-8a8fd621da9e">
 
-Click on the `Add Database Manually` 
+Click on the `Add Database Manually`
 
 <img width="1278" alt="bedrock-redis-rc-tls-6-ri-add-db" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/116236bb-4250-41e5-8cde-9a8b0ceec085">
 
@@ -145,7 +145,7 @@ Since we enabled `TLS` (both serverside and client side), we need to let RedisIn
 <img width="1265" alt="bedrock-redis-rc-tls-8-ri-pst-ep" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/6acc932d-00ec-4221-9e9c-992b5ab64528">
 
 Copy the contents of `redis_ca.pem` file. Make sure to include the entire contents of the file, including `----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` etc.
-	
+
 <img width="802" alt="bedrock-redis-rc-tls-9-ri-ca-cp" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/cca7ad50-f8a9-4ae2-b967-172538a9c238">
 
 And past the contents in the `Certificate` textbox as shown.
@@ -173,9 +173,9 @@ Click on the database to connect. Since the database is all empty, when you sear
 That is it, you are all set with Redis setup and connecting to the Redis datbase using a Redis Client like RedisInsight.
 
 
-### Redis database endpoint configurations
+### Additional Redis database endpoint configurations
 
-Redis Enterprise Cloud on AWS is now ready for your use. Typically, the developers need an endpoint , a user password and the server certificate to connect to the database from their applications.
+Redis Enterprise Cloud on AWS is now ready for your use. Typically, the developers need an endpoint, a user password and the server certificate to connect to the database from their applications.
 
 <img width="1288" alt="bedrock-redis-rc-30" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/0a8a13b6-4a7b-421f-a900-0186d2391d75">
 
@@ -186,12 +186,15 @@ Redis web console also gives you code snippets on how to connect from different 
 Like mentioned above, here is how you can get the password to your Redis database.
 <img width="1290" alt="bedrock-redis-rc-32" src="https://github.com/RedisVentures/aws-redis-bedrock-stack/assets/6223831/15671058-1040-4f9b-8858-9669970c6112">
 
-### Summary
-In essence, you will spin a Redis Enterprise Cloud cluster in AWS and once this subscription is provisioned, you will need the following details for your database, for your client applications to connect to.
+
+## Next Steps
+By now, you have spun up a Redis Enterprise Cloud subscription in AWS and validated the connection. **Next, you will need to [create a vector index](vector-index-creation.md).**
+
+Make sure to hold on to the following details for your database as you will need these for the final integration step.
 
 ```
 Redis Enterprise Cloud Database Hostname
 Redis Enterprise Cloud Database Port Number
 Redis Enterprise Cloud Database Password
-Redis Enterprise Cloud Database Server certification for TLS
+Redis Enterprise Cloud Database Server & Client certs for TLS
 ```
