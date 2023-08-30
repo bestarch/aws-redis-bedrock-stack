@@ -36,12 +36,15 @@ We need to update the provided index creation script with settings that are rele
 
 > 💡 As of this launch, Bedrock will not perform any metadata filtering (on the roadmap). So we do not need to include any additional fields for metadata at this time.
 
+![bedrock-index-creation-3](./assets/bedrock-index-creation-3.png)
+
+
 Execute the script, as seen below, using the green arrow.
 
 ![Run Script](#TODO - show running the index creation script)
-![bedrock-index-creation-3](./assets/bedrock-index-creation-3.png)
+![bedrock-index-creation-4](./assets/bedrock-index-creation-4.png)
 
 And you will see a confirmation like this:
-![bedrock-index-creation-4](./assets/bedrock-index-creation-4.png)
+![bedrock-index-creation-4](./assets/bedrock-index-creation-5.png)
 
 **Upon seeing "OK", you're all set to [complete your Bedrock integration]()!**
