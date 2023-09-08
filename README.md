@@ -3,8 +3,8 @@
 
 💪🏼 Introducing the integration of AWS Bedrock and Redis Enterprise: a game-changer for generative AI applications. This collaboration offers a robust, scalable, and efficient solution for developers, streamlining the use of LLMs with Redis as a vector database. Dive into our new reference architecture to harness the full potential of Retrieval-Augmented Generation (RAG) in your projects.
 
-[TODO -- Add Reference Architecture Diagram HERE]
 
+![bedrock-redis-ref-arch.jpg](./docs/assets/bedrock-index-creation-2.png)
 🧠 The above reference architecture highlights AWS Bedrock and Redis Enterprise as a vector database. The Bedrock integration handle the following for customers:
 1. Loading content from a data source (S3)
 2. Creating vector embeddings with a chosen LLM
