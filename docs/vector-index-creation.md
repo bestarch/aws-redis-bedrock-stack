@@ -76,7 +76,6 @@ Given the options available, choose to create a FLAT index.
 
 > 💡 Redis supports two index types: FLAT and HNSW. FLAT is apt for smaller datasets needing precision, while HNSW suits larger datasets prioritizing speed over some accuracy. For more details, read about the supported index types [here](https://redis.io/docs/interact/search-and-query/search/vectors/#create-a-vector-field).
 
-![Command Editor](#TODO - open editor for commands)
 ![bedrock-index-creation-2](./assets/bedrock-index-creation-2.png)
 
 We need to update the provided index creation script with settings that are relevant to Bedrock. Here's what we need to include:
@@ -93,7 +92,6 @@ We need to update the provided index creation script with settings that are rele
 
 Execute the script, as seen below, using the green arrow.
 
-![Run Script](#TODO - show running the index creation script)
 ![bedrock-index-creation-4](./assets/bedrock-index-creation-4.png)
 
 And you will see a confirmation like this:

@@ -75,13 +75,18 @@ Give your `database` a name and select `RediSearch` and `RedisJSON` modules.
 
 <img width="1288" alt="bedrock-redis-rc-15" src="./assets/bedrock-redis-rc-15.png">
 
-Depending upon the total number of documents you intend to use in your vector database, you will need to start with a specific data size for your applications. For this exercise, use the approximate sizing table below to help pick a starting point (which you can always adjust up or down later on). Alternatively, you can select a simple minimalistic configuration for now (example: Memory = 1 GB and Throughput Shards = 1).
+Depending upon the total number of documents you intend to use in your vector database, you will need to start with a specific data size for your applications. For this exercise, use the approximate sizing table below to help pick a starting point (which you can always adjust up or down later on).
 
-| Number of Documents | Db size w/out replication (no HA) | Db size w/ replication (HA) |
+| Total Size of Documents in S3 | Db size w/out replication (no HA) | Db size w/ replication (HA) |
 | ------- | ------- | ------- |
-| TODO  | TODO  | TODO  |
-| TODO  | TODO  | TODO  |
+| 10,000 kb  | 60 Mb  | 120 Mb  |
+| 100,000 kb  | 600 Mb  | 1.2 Gb  |
+| 1,000,000 kb | 6 Gb | 12 Gb |
+| 10,000,000 kb | 60 Gb | 120 Gb |
 
+If you would like to understand the rationale behind the above calculations, please check out [this blog](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/) that has more details.
+
+Alternatively, you can select a simple minimalistic configuration for now (example: Memory = 1 GB and Throughput Shards = 1).
 
 <img width="1288" alt="bedrock-redis-rc-21" src="./assets/bedrock-redis-rc-21.png">
 
