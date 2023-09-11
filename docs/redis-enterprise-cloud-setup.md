@@ -5,9 +5,7 @@
 ## Objective
 The goal is to deploy Redis Enterprise Cloud as your vector database for AWS Bedrock on the AWS Marketplace. You will create a flexible, pay-as-you-go subscription. If you are new to Redis, **we even give you a 14-day free trial of $500 USD to get started!**
 
-[ TODO - BEDROCK UI REDIS DEPLOYMENT LINK SCREENSHOT]
-
-Link directly from the Bedrock configuration screen seen above, or manually [follow this link] to the AWS Marketplace offering to get started.
+Link directly from the Bedrock configuration screen, or manually [follow this link](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-11&ref_=beagle&applicationId=AWSMPContessa) to the AWS Marketplace offering to get started.
 
 ## Setup Procedure
 
