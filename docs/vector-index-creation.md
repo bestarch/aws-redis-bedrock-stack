@@ -5,11 +5,24 @@
 ## Objective
 To integrate with AWS Bedrock, you must create a vector index in Redis to house your vectorized data.
 
-> ✍️ Prerequisite: Ensure that your Redis Enterprise Cloud database is [active with TLS enabled](redis-enterprise-cloud-setup.md#tls-setup-for-your-redis-database) and certificate files (`redis_ca.pem`, `redis_user_crt.pem`, and `redis_secret_crt.pem`) downloaded.
+With Redis you can build secondary indices on hash or JSON fields including text, tags, geo, numeric, and vectors. For vector similarity search, you must choose between a FLAT (brute-force) or HNSW (approximate, faster) vector index type, and one of three supported distance metrics (Inner Product, Cosine Distance, L2 Euclidean). Picking the right index type should be based on the size of your document dataset and the required levels of search accuracy and throughput.
+
+For getting started with Amazon Bedrock, we recommend a simple index configuration with the following settings:
+
+- User defined index name: bedrock-idx
+- User defined vector field name: text_vector
+- Vector index type: FLAT
+- AWS Titan model embedding dimensions: 1536
+
+Assuming your documents dataset is not massive and you require the utmost retrieval accuracy for RAG, this index configuration is a solid starting point.
+
+Out of the box, Redis provides a few options to create an index using RedisInsight,  RedisVL, or the Redis command-line interface (CLI).
+
+> ✍️ Prerequisite: Ensure that your Redis Enterprise Cloud database is [active with TLS enabled](redis-enterprise-cloud-setup.md#tls-setup-for-your-redis-database) and certificate files (`redis_ca.pem`, `redis_user.crt`, and `redis_user_private.key`) downloaded.
+
+## Use RedisInsight
 
 > ✍️ Prerequisite: You will need the free [RedisInsight](https://redis.com/redis-enterprise/redis-insight/#insight-form) GUI for this task.
-
-## Setup Procedure
 
 ### 1. Connect to Your Database in RedisInsight
 While using RedisInsight (RI) is not stricly required, RI provides the easiest route for us to create a vector index for Bedrock. Alternatively you can utilize any number of our supported client libraries and the Redis CLI.
@@ -97,4 +110,42 @@ Execute the script, as seen below, using the green arrow.
 And you will see a confirmation like this:
 ![bedrock-index-creation-4](./assets/bedrock-index-creation-5.png)
 
-**Upon seeing "OK", you're all set to [complete your Bedrock integration]()!**
+## Use RedisVL
+⭐ [RedisVL](https://redisvl.com) is a new, dedicated Python client library that helps AI and ML practitioners leverage Redis as a vector database. First, install RedisVL in your Python (>=3.8) environment using pip:
+```bash
+pip install redisvl==0.0.4
+```
+Copy the below YAML file that contains a basic Redis vector index spec for Amazon Bedrock and paste it into a local file named `bedrock-idx.yaml`:
+
+```yaml
+index:
+    name: bedrock-idx
+
+fields:
+    vector:
+        - name: text_vector
+          dims: 1536
+          algorithm: flat
+          distance_metric: cosine
+```
+You can now utilize the `rvl` command in a terminal to connect to the database and create a new index from the YAML schema definition.
+
+Set the `REDIS_URL` environment variable that incorporates the username, password, host, port, and full paths to all three required TLS cert files:
+```bash
+export REDIS_URL="rediss://<USER>:<PASSWORD>@<HOST>:<PORT>?ssl_ca_certs=<redis_ca.pem>&ssl_certfile=<redis_user.crt>&ssl_keyfile=<redis_user_private.key>&ssl_cert_reqs=required"
+```
+Now simply run the command to create the index and watch for a success message:
+```bash
+rvl index create -s bedrock-idx.yaml
+```
+Validate that the index was created successfully using the listall or info commands:
+```
+rvl index info -s bedrock-idx.yaml
+```
+
+## Use Redis CLI
+Coming Soon!
+
+___
+
+*Now you are all set to complete your Bedrock integration in the AWS console.*
