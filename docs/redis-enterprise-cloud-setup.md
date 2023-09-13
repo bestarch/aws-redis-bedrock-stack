@@ -77,14 +77,14 @@ Depending upon the total number of documents you intend to use in your vector da
 
 | Total Size of Documents in S3 | Db size w/out replication (no HA) | Db size w/ replication (HA) |
 | ------- | ------- | ------- |
-| 10,000 kb  | 60 Mb  | 120 Mb  |
-| 100,000 kb  | 600 Mb  | 1.2 Gb  |
-| 1,000,000 kb | 6 Gb | 12 Gb |
-| 10,000,000 kb | 60 Gb | 120 Gb |
+| 10,000 KB  | 135 MB  | 270 MB  |
+| 100,000 KB  | 1.35 GB  | 2.7 GB  |
+| 1,000,000 KB | 13.5 GB | 27 GB |
+| 10,000,000 KB | 135 GB | 270 GB |
 
-If you would like to understand the rationale behind the above calculations, please check out [this blog](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/) that has more details.
+If you would like to understand the rationale behind the above calculations, please check out [the announcement blog](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/) that has more details.
 
-Alternatively, you can select a simple minimalistic configuration for now (example: Memory = 1 GB and Throughput Shards = 1).
+> Alternatively, you can select a simple minimalistic configuration for now (example: Memory = 1 GB and Throughput Shards = 1) and adjust later.
 
 <img width="1288" alt="bedrock-redis-rc-21" src="./assets/bedrock-redis-rc-21.png">
 
