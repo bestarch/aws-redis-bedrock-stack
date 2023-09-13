@@ -38,3 +38,6 @@ _____
 
 # Community Examples
 Go ahead and get a taste of AWS Bedrock by running a few [examples](./examples) yourself. These will continuously update once the integration is live and as community developers add more examples.
+
+# Need help?
+Having issues with the integration? [Get in touch with a Redis expert today](https://redis.com/cloud-partners/aws/#redis_expert). Report other issues on the github repo here by opening an issue.
